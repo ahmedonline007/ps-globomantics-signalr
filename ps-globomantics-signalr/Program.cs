@@ -8,7 +8,7 @@ builder.Services.AddSignalR(o => o.EnableDetailedErrors = true);
 builder.Services.AddSingleton<IAuctionRepo, AuctionMemoryRepo>();
 
 var app = builder.Build();
-
+//
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
