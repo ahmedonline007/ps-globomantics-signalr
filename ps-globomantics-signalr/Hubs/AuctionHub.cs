@@ -13,9 +13,7 @@ namespace ps_globomantics_signalr.Hubs
             await Clients.OthersInGroup(groupName).SendAsync("NotifyOutbid", auctionNotify);
 
             await Clients.All.SendAsync("ReceiveNewBid", auctionNotify);
-
-            //await Clients.All.SendAsync("ReceiveNewBid", auctionNotify);
-            //await Clients.Caller.SendAsync("ConfirmNewBid");
+            //await Clients.Caller.SendAsync("ConfirmNewBid", auctionNotify);
         }
     }
 }

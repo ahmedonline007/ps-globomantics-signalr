@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSignalR(o => o.EnableDetailedErrors = true);
+builder.Services.AddSignalR(o => o.EnableDetailedErrors = true);//.AddMessagePackProtocol();
 builder.Services.AddSingleton<IAuctionRepo, AuctionMemoryRepo>();
 
 var app = builder.Build();
@@ -30,6 +30,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+app.MapGet("/auctions", (IAuctionRepo auctionRepo) =>
+{
+    return auctionRepo.GetAll();
+});
 
 app.MapPost("auction/{auctionId}/newbid", (int auctionId, int currentBid, IAuctionRepo auctionRepo) =>
 {

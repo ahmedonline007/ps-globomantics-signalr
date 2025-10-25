@@ -10,6 +10,16 @@
         "dist/browser/signalr.js.map",
         "dist/browser/signalr.js"
       ]
+    },
+    {
+      "library": "@microsoft/signalr-protocol-msgpack@6.0.6",
+      "destination": "wwwroot/js/signalr-protocol-msgpack/",
+      "files": [
+        "dist/browser/signalr-protocol-msgpack.js",
+        "dist/browser/signalr-protocol-msgpack.js.map",
+        "dist/browser/signalr-protocol-msgpack.min.js",
+        "dist/browser/signalr-protocol-msgpack.min.js.map"
+      ]
     }
   ]
 }
